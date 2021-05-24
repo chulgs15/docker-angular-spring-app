@@ -10,7 +10,7 @@ public class TestController {
 
     @GetMapping(value = "/api/hello")
     public String helloWorld() {
-        log.info("hello world is comming");
+        log.info("hello world is coming");
         return "hello world";
     }
 }
