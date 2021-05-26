@@ -1,0 +1,112 @@
+<mat-card *ngIf="isShown" @inquiryOracleDeployEnterLeaveTrigger>
+  <mat-card-content>
+    <mat-card class="mat-elevation-z8">
+      <mat-card-header>
+        <mat-card-title>Request Id 1</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="header-flex-container">
+          <div class="header-flex-item">
+            <!-- 요청자정보 -->
+            <mat-form-field appearance="outline">
+              <mat-label>Requestor</mat-label>
+              <input
+                matInput
+                placeholder="Placeholder"
+                readonly
+                value="신철규, comscg"
+              />
+            </mat-form-field>
+          </div>
+
+          <!-- 상태 -->
+          <div class="header-flex-item">
+            <mat-form-field appearance="outline">
+              <mat-label>Status</mat-label>
+              <input matInput placeholder="Placeholder" readonly value="New" />
+            </mat-form-field>
+          </div>
+
+          <!-- 생성시간 -->
+          <div class="header-flex-item">
+            <mat-form-field appearance="outline">
+              <mat-label>Creation Date</mat-label>
+              <input
+                matInput
+                placeholder="Placeholder"
+                readonly
+                value="2020-11-30 13:30:24"
+              />
+            </mat-form-field>
+          </div>
+
+          <!-- 인스턴스 -->
+          <div class="header-flex-item">
+            <mat-form-field appearance="outline">
+              <mat-label>Instance</mat-label>
+              <input
+                matInput
+                placeholder="Placeholder"
+                readonly
+                value="ERPPROD"
+              />
+            </mat-form-field>
+          </div>
+
+          <!-- 이슈 ID -->
+          <div class="header-flex-item">
+            <mat-form-field appearance="outline">
+              <mat-label>Issue Id</mat-label>
+              <input matInput placeholder="Placeholder" readonly value="1" />
+            </mat-form-field>
+          </div>
+
+          <!-- G-TOSS-ID -->
+          <div class="header-flex-item">
+            <mat-form-field appearance="outline">
+              <mat-label>G-TOSS ID</mat-label>
+              <input
+                matInput
+                placeholder="Placeholder"
+                readonly
+                value="CHM2007-I0001"
+              />
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card> </mat-card-content
+></mat-card>
+
+<mat-card *ngIf="isShown" @inquiryOracleDeployEnterLeaveTrigger>
+  <mat-card-content>
+    <mat-card class="mat-elevation-z8">
+      <mat-card-header>
+        <mat-card-title>Source</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-accordion>
+          <mat-selection-list [multiple]="false">
+            <div class="header-flex-container">
+              <div class="header-flex-item">
+                <mat-list-option class="mat-elevation-z2"
+                  >BTRF00001</mat-list-option
+                >
+              </div>
+              <div class="header-flex-item">
+                <mat-list-option class="mat-elevation-z2"
+                  >BTRF00002</mat-list-option
+                >
+              </div>
+              <div class="header-flex-item">
+                <mat-list-option class="mat-elevation-z2"
+                  >BTRF00003</mat-list-option
+                >
+              </div>
+            </div>
+          </mat-selection-list>
+        </mat-accordion>
+      </mat-card-content>
+    </mat-card>
+  </mat-card-content>
+</mat-card>

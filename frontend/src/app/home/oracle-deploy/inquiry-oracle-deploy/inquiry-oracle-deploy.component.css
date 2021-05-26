@@ -1,0 +1,46 @@
+.header-flex-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: [first] 50% [second] 50%;
+}
+
+.header-sub-flex-item {
+  width: 50%;
+}
+
+.header-flex-item {
+  /* width: 48%; */
+  display: grid;
+  padding: 5px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-label {
+  font-size: large;
+}
+
+mat-list-option {
+  padding: 5px;
+}
+
+.line-flex-container {
+  width: 100%;
+  display: grid;
+}
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}

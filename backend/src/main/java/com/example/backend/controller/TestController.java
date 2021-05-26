@@ -31,8 +31,8 @@ public class TestController {
         return "hello world";
     }
 
-    @PostMapping(value = {"/api/user/loginProcess"}, produces = MediaType.TEXT_PLAIN_VALUE)
-    public String loginProcess(@RequestBody LoginDto loginDto) {
+    @PostMapping(value = {"/api/user/loginProcess"}, produces = MediaType.APPLICATION_JSON_VALUE)
+    public LoginDto loginProcess(@RequestBody LoginDto loginDto) {
         AccountUser user = userRepository.findById(loginDto.userName)
                 .orElseThrow(() -> new ApplicationException("No User in Service"));
 
@@ -40,7 +40,7 @@ public class TestController {
             throw new ApplicationException("Password Invalid");
         }
 
-        return loginDto.getUserName();
+        return loginDto;
     }
 
     @PostMapping(value = {"/api/user/register"}, produces = MediaType.APPLICATION_JSON_VALUE)

@@ -1,0 +1,77 @@
+<mat-tab-group dynamicHeight>
+  <mat-tab label="Oracle Compiler">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Forms Compiler</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field appearance="fill">
+          <mat-label>ERP Server</mat-label>
+          <mat-select [formControl]="animalControl" required>
+            <mat-option *ngFor="let animal of animals" [value]="animal">
+              {{ animal.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="animalControl.hasError('required')"
+            >Please choose an animal</mat-error
+          >
+        </mat-form-field>
+        <button mat-raised-button color="primary">
+          Compile
+        </button>
+      </mat-card-content>
+      <mat-card-content>
+        <!-- <div class="example-small-box mat-elevation-z8">     </div> -->
+        <table
+          mat-table
+          [dataSource]="dataSource"
+          appDragAndDrop
+          class="mat-elevation-z8"
+        >
+          <!--- Note that these columns can be defined in any order.
+                    The actual rendered columns are set as a property on the row definition" -->
+
+          <!-- fileName Column -->
+          <ng-container matColumnDef="fileName">
+            <th mat-header-cell *matHeaderCellDef>File</th>
+            <td mat-cell *matCellDef="let element">{{ element.fileName }}</td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="fileType">
+            <th mat-header-cell *matHeaderCellDef>Type</th>
+            <td mat-cell *matCellDef="let element">{{ element.fileType }}</td>
+          </ng-container>
+
+          <!-- module Column -->
+          <ng-container matColumnDef="module">
+            <th mat-header-cell *matHeaderCellDef>Module</th>
+            <td mat-cell *matCellDef="let element">{{ element.module }}</td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef>Action</th>
+            <td mat-cell *matCellDef="let element">
+              <button
+                mat-icon-button
+                class="example-icon"
+                aria-label="Example icon-button with heart icon"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </mat-card-content>
+    </mat-card>
+  </mat-tab>
+  <mat-tab label="Long tab">
+    <div class="example-large-box mat-elevation-z4">
+      Large content
+    </div>
+  </mat-tab>
+</mat-tab-group>
