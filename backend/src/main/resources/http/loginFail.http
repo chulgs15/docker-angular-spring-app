@@ -1,0 +1,7 @@
+POST localhost:8080/api/user/loginProcess
+Content-Type: application/json
+
+{
+  "userName" : "comscg",
+  "password" : "123456"
+}
