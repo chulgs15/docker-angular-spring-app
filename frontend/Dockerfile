@@ -1,11 +1,11 @@
-FROM node:alpine
-
+FROM node:10 as builder
 WORKDIR /app
-
-COPY package.json ./
-
+COPY ./package.json ./
 RUN npm install
+COPY . .
+RUN npm run build
 
-COPY ./ ./
-
-CMD [ "npm", "run", "test" ]
+FROM nginx
+EXPOSE 4200
+COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /app/dist/aidant-ebs  /usr/share/nginx/html

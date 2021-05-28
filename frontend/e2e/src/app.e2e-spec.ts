@@ -21,7 +21,7 @@ describe('login 페이지 테스트', () => {
     let elementFinder = element(by.tagName("input"));
 
     element(by.id("mat-input-0")).sendKeys("comscg");
-    element(by.id("mat-input-1")).sendKeys("123456");
+    element(by.id("mat-input-1")).sendKeys("comscg");
 
     element(by.tagName("button")).click();
 
