@@ -8,4 +8,8 @@ export class AppPage {
   getTitleText(): Promise<string> {
     return element(by.css('app-root .content span')).getText() as Promise<string>;
   }
+
+  getId(): Promise<string> {
+    return element(by.tagName("input")).getText() as Promise<string>;
+  }
 }

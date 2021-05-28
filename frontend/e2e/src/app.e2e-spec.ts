@@ -1,16 +1,36 @@
 import { AppPage } from './app.po';
-import { browser, logging } from 'protractor';
+import {browser, by, element, logging} from 'protractor';
 
-describe('workspace-project App', () => {
+import {ComponentFixture, TestBed} from "@angular/core/testing";
+import {AppModule} from "../../src/app/app.module";
+import {LoginComponent} from "../../src/app/login/login.component";
+
+describe('login 페이지 테스트', () => {
   let page: AppPage;
 
-  beforeEach(() => {
+
+  beforeEach( () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+
+  it('로그인 페이지가 보인다.', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('aidant-ebs app is running!');
+
+    // id/password Item을 찾는다.
+    let elementFinder = element(by.tagName("input"));
+
+    element(by.id("mat-input-0")).sendKeys("comscg");
+    element(by.id("mat-input-1")).sendKeys("123456");
+
+    element(by.tagName("button")).click();
+
+    let currentUrl1 = browser.getCurrentUrl();
+
+
+
+    expect(currentUrl1).toEqual("localhost:4200/");
+
   });
 
   afterEach(async () => {

@@ -19,7 +19,7 @@ export interface fileElement {
 const ELEMENT_DATA: fileElement[] = [
   {
     requestId: 1,
-    requestor: '신철규, comscg',
+    requestor: '신철구',
     creationDate: '2020-01-01 12:30:20',
     instance: 'ERPPROD',
     g_toss_id: 'CHM2007-I0001',
@@ -28,7 +28,7 @@ const ELEMENT_DATA: fileElement[] = [
   },
   {
     requestId: 2,
-    requestor: '윤태호, comyth',
+    requestor: '융대호',
     creationDate: '2020-01-02 17:30:20',
     instance: 'ERPPROD',
     g_toss_id: 'CHM2007-I0002',
@@ -37,7 +37,7 @@ const ELEMENT_DATA: fileElement[] = [
   },
   {
     requestId: 3,
-    requestor: '김덕호, comkdhd',
+    requestor: '김더오',
     creationDate: '2023-01-02 14:24:20',
     instance: 'MERPPROD',
     g_toss_id: 'CHM2007-I0004',
@@ -46,7 +46,7 @@ const ELEMENT_DATA: fileElement[] = [
   },
   {
     requestId: 4,
-    requestor: '김기웅, comkgu',
+    requestor: '김키융',
     creationDate: '2013-01-02 14:24:20',
     instance: 'MERPPROD',
     g_toss_id: 'CHM2007-I0004',
@@ -55,7 +55,7 @@ const ELEMENT_DATA: fileElement[] = [
   },
   {
     requestId: 5,
-    requestor: '김기웅, comkgu',
+    requestor: '김키융',
     creationDate: '2013-01-02 14:24:20',
     instance: 'MERPPROD',
     g_toss_id: 'CHM2007-I0009',
