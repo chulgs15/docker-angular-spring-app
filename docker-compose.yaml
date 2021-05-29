@@ -1,9 +1,18 @@
 version: "3"
 services:
+  mysql:
+    build:
+      context: ./mysql
+      dockerfile: Dockerfile
+    container_name: app_mysql
+    ports:
+      - 3306:3306
+
+
   frontend:
     build:
-      dockerfile: Dockerfile
       context: ./frontend
+      dockerfile: Dockerfile
     volumes:
       - /app/node_modules
       - ./frontend:/app
@@ -11,22 +20,18 @@ services:
   nginx:
     restart: always
     build:
-      dockerfile: Dockerfile
       context: ./nginx
+      dockerfile: Dockerfile
     ports:
-      - "4200:80"
+      - 4200:80
+      - 80:80
 
   backend:
+    restart: on-failure
     build:
-      dockerfile: Dockerfile
       context: ./backend
+      dockerfile: Dockerfile.dev
     container_name: app_backend
 
 
-  mysql:
-    build:
-      dockerfile: Dockerfile
-      context: ./mysql
-    container_name: app_mysql
-    ports:
-      - "3306:3306"
+
