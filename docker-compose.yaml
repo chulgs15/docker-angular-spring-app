@@ -32,6 +32,10 @@ services:
       context: ./backend
       dockerfile: Dockerfile.dev
     container_name: app_backend
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://app_mysql:3306/myapp?serverTimezone=UTC&characterEncoding=UTF-8
+      SPRING_DATASOURCE_USERNAME: scott
+      SPRING_DATASOURCE_PASSWORD: 123456
 
 
 
