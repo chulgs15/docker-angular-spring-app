@@ -14,14 +14,14 @@ after_success:
   - docker push chulgs15/docker-angular-frontend
   - docker push chulgs15/docker-nginx
 
-#deploy:
-#  provider: elasticbeanstalk
-#  region: "us-east-2"
-#  app: "docker-fullstack-app"
-#  env: "Dockerfullstackapp-env "
-#  bucket_name: elasticbeanstalk-us-east-2-267929877047
-#  bucket_path: "docker-fullstack-app"
-#  on:
-#    branch: main
-#  access_key_id: $AWS_ACCESS_KEY
-#  secret_access_key: $AWS_ACCESS_SECRET_KEY
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-angular-springboot-app"
+  env: "Dockerangularspringbootapp-env "
+  bucket_name: elasticbeanstalk-us-east-2-267929877047
+  bucket_path: "docker-angular-springboot-app"
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_ACCESS_SECRET_KEY
