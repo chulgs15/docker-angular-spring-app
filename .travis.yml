@@ -20,7 +20,7 @@ deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
   app: "docker-angular-springboot-app"
-  env: "Dockerangularspringbootapp-env "
+  env: "Dockerangularspringbootapp-env-1"
   bucket_name: elasticbeanstalk-us-east-2-267929877047
   bucket_path: "docker-angular-springboot-app"
   on:
