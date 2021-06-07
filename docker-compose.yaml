@@ -28,7 +28,7 @@ services:
     restart: on-failure
     build:
       context: ./backend
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     container_name: app_backend
     ports:
       - 8080:8080
