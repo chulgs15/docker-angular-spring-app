@@ -1,0 +1,20 @@
+version: "3"
+services:
+  frontend:
+    build:
+      dockerfile: Dockerfile
+      context: ./frontend
+    volumes:
+      - /app/node_modules
+      - ./frontend:/app
+  backend:
+    build:
+      dockerfile: Dockerfile
+      context: ./backend
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - "80:80"
