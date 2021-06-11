@@ -1,0 +1,39 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "frontend",
+      "image": "chulgs15/docker-angular-frontend",
+      "hostname": "frontend",
+      "essential": false,
+      "memory": 128
+    },
+    {
+      "name": "backend",
+      "image": "chulgs15/docker-springboot-backend",
+      "hostname": "backend",
+      "essential": false,
+      "portMappings": [
+        {
+          "hostPort": 8080,
+          "containerPort": 8080
+        }
+      ],
+      "memory": 128
+    },
+    {
+      "name": "nginx",
+      "image": "chulgs15/docker-nginx",
+      "hostname": "nginx",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": ["frontend", "backend"],
+      "memory": 128
+    }
+  ]
+}

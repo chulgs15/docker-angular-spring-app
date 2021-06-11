@@ -11,8 +11,8 @@ public class TestController {
 
     @GetMapping(value = {"/api/hello"})
     public Map<String, String> helloWorld() {
+        System.out.println("hello world");
         Map<String, String> map = new HashMap<>();
-
         map.put("message", "hello world");
         return map;
     }
