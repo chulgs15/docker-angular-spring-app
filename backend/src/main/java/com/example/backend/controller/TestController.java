@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
@@ -29,6 +30,7 @@ public class TestController {
     @PostMapping(value = {"/api/user"})
     public Map<String, String> isUserExist(@RequestBody LoginDto dto) {
         Map<String, String> map = new HashMap<>();
+
         AccountUser user = userRepository.findByuserNameAndPassword(dto.getUserName(), dto.getPassword());
 
         if (user == null) {
