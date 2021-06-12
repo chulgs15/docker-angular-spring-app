@@ -5,6 +5,11 @@ interface message {
   message: string
 }
 
+interface LoginDto{
+  userName: string,
+  password: string
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,6 +17,8 @@ interface message {
 })
 export class AppComponent {
   title = 'frontend';
+  passwordValue: string = "";
+  idValue: string = "";
 
   constructor(private http:HttpClient) {
   }
@@ -28,6 +35,22 @@ export class AppComponent {
           console.error(error);
         }, () => {
           console.log("api/hello complete");
+        }
+      );
+  }
+
+  isUserExist() {
+    console.log(this.idValue, " ", this.passwordValue);
+    let loginDto: LoginDto = {userName : this.idValue, password : this.passwordValue}
+    this.http.post<message>("/api/user", loginDto)
+      .subscribe(
+        (data: message) => {
+          console.log(data);
+          alert(data.message);
+        }, error => {
+          console.error(error);
+        }, () => {
+          console.log("api/user complete");
         }
       );
   }
