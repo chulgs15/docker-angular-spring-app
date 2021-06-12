@@ -5,14 +5,14 @@
       "name": "frontend",
       "image": "chulgs15/docker-angular-frontend",
       "hostname": "frontend",
-      "essential": false,
+      "essential": true,
       "memory": 128
     },
     {
       "name": "backend",
       "image": "chulgs15/docker-springboot-backend",
       "hostname": "backend",
-      "essential": false,
+      "essential": true,
       "memory": 128
     },
     {
