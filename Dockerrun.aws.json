@@ -13,7 +13,7 @@
       "image": "chulgs15/docker-springboot-backend",
       "hostname": "backend",
       "essential": true,
-      "memory": 128
+      "memory": 512
     },
     {
       "name": "nginx",
